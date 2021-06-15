@@ -1,7 +1,7 @@
 {
-    "codigo": "216788996",
-    "nip": "nmkanfdlmasdfasdfsadlffdFDSAFMDDKSADADdasnjAD", // Encriptado
-    "tipo": "maestro", // maestro, coordinador de personal, jefe de departamento
+    "codigo": "213572631",
+    "nip": "$2y$12$5WdKUeODIsRf0yzDKRdra.dkXcvJSFPAQ3f0QquqR4v52QseHa0fu", // Encriptado
+    "tipo": "coordinador de personal", // maestro, coordinador de personal, jefe de departamento
     "status": "activo",  // jubilado, finado, despedido, renuncia
     "direccion_nacimiento": {
         "ciudad": "Barcelona",

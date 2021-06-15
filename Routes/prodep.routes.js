@@ -1,7 +1,5 @@
 const express = require('express');
-
 const app = express();
-
 const prodepCtrl = require('../Controllers/prodep.controller');
 const prodepExpedienteCtrl = require('../Controllers/prodep_expediente.controller');
 const prodepDictamenCtrl = require('../Controllers/prodep_dictamen.controller');
