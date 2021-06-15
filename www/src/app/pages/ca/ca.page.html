@@ -1,0 +1,130 @@
+<ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="textCenter">
+        Clave: {{data.clave}}
+      </ion-col>
+      <ion-col class="textCenter">
+        Nombre: {{data.nombre}}
+      </ion-col>
+      <ion-col class="textCenter">
+        Año de creación: {{data.anio_creacion}}
+      </ion-col>
+      <ion-col *ngIf="type===1 || type===2">
+        <ion-item>
+          <ion-button expand="full" (click)="f.click()">
+            Subir Expediente
+          </ion-button>
+          <input
+            class="ion-hide"
+            #f
+            type="file"
+            (change)="subirExpedienteCA($event, item)"
+          />
+        </ion-item>
+      </ion-col>
+      <ion-col *ngIf="type===1 || type===2">
+        <ion-item>
+          <ion-button expand="full" (click)="f.click()">
+            Actualizar Expediente
+          </ion-button>
+          <input
+            class="ion-hide"
+            #f
+            type="file"
+            (change)="actualizarExpedienteCA($event, item)"
+          />
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="textCenter"> Nivel: {{data.nivel}} </ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="textCenter">
+        <h4>
+          Integrantes
+        </h4>
+      </ion-col>
+      <ion-col *ngIf="type===1 || type===2">
+        <ion-item>
+          <ion-label position="floating">Codigo</ion-label>
+          <ion-input [(ngModel)]="codigo"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col *ngIf="type===1 || type===2">
+        <ion-item>
+          <ion-label>Tipo</ion-label>
+          <ion-select [(ngModel)]="tipo">
+            <ion-select-option value="Representante"
+              >Representante
+            </ion-select-option>
+            <ion-select-option value="Integrante"
+              >Integrante
+            </ion-select-option>
+            <ion-select-option value="Colaborador"
+              >Colaborador
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col *ngIf="type===1 || type===2">
+        <ion-button (click)="agregar()" class="textCenter">
+          Agregar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" class="textCenter">
+        Codigo
+      </ion-col>
+      <ion-col size="4" class="textCenter">
+        Tipo
+      </ion-col>
+      <ion-col size="4"> </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let item of integrantes">
+      <ion-col size="4" class="textCenter">
+        {{item["integrante"].codigo}}
+      </ion-col>
+      <ion-col size="4" class="textCenter">
+        {{item.tipo}}
+      </ion-col>
+      <ion-col size="4" *ngIf="type===1 || type===2">
+        <ion-button (click)="eliminar(item)" class="textCenter">
+          Eliminar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="textCenter">
+        Dictamenes
+      </ion-col>
+      <ion-col *ngIf="type===1 || type===2" class="textCenter">
+        <ion-item>
+          <ion-button expand="full" (click)="f.click()">
+            Subir
+          </ion-button>
+          <input
+            class="ion-hide"
+            #f
+            type="file"
+            (change)="subirDictamenCA($event, item)"
+          />
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

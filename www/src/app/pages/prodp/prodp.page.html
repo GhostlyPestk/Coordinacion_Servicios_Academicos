@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-navbar>
+    <ion-button routerLink="/login">
+      Inicio
+    </ion-button>
+    <ion-button routerLink="/cuerposacademicos">
+      Cuerpos Académicos
+    </ion-button>
+    <ion-button routerLink="/login" (click)="salir()">
+      Cerrar Sesión
+    </ion-button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3">
+        <h1 class="textCenter">
+          PRODEP
+        </h1>
+      </ion-col>
+      <ion-col size="3" *ngIf="type===1 || type===2">
+        <ion-searchbar (keyup.enter)="filterData($event.target.value)">
+        </ion-searchbar>
+      </ion-col>
+      <ion-col size="6">
+        <ion-row>
+          <ion-col *ngIf="type===1 || type===2">
+            <ion-button expand="full" (click)="openModal()">
+              <ion-icon name="add"></ion-icon>
+              Crear
+            </ion-button>
+          </ion-col>
+          <ion-col *ngIf="type===1 || type===2">
+            <ion-button expand="full" (click)="openModalData()">
+              <ion-icon name="add"></ion-icon>
+              Modificar
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="textCenter">
+        Fecha recibido: {{fechaRecibido}}
+      </ion-col>
+      <ion-col class="textCenter">
+        Duración: {{duracion}}
+      </ion-col>
+      <ion-col class="textCenter">
+        Monto Economico: {{monto}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-row class="textCenter">
+          <h3>
+            Expediente
+          </h3>
+          <ion-button> Descargar </ion-button>
+        </ion-row>
+      </ion-col>
+      <ion-col>
+        <ion-row class="textCenter">
+          <h3>
+            Dictamen
+          </h3>
+          <ion-button> Descargar </ion-button>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="textCenter">
+        <ion-item>
+          <ion-button expand="full" (click)="f.click()">
+            Subir
+          </ion-button>
+          <input
+            class="ion-hide"
+            #f
+            type="file"
+            (change)="subirExpediente($event)"
+          />
+        </ion-item>
+      </ion-col>
+      <ion-col class="textCenter">
+        <ion-button>
+          Actualizar
+        </ion-button>
+      </ion-col>
+      <ion-col class="textCenter">
+        <ion-item>
+          <ion-button expand="full" (click)="f.click()">
+            Subir
+          </ion-button>
+          <input
+            class="ion-hide"
+            #f
+            type="file"
+            (change)="subirDictamen($event)"
+          />
+        </ion-item>
+      </ion-col>
+      <ion-col class="textCenter">
+        <ion-button>
+          Actualizar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

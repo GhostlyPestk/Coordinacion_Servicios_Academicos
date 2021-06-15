@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar>
+    <ion-button routerLink="/login">
+      Inicio
+    </ion-button>
+    <ion-button routerLink="/prodep">
+      Prodep
+    </ion-button>
+    <ion-button routerLink="/login" (click)="salir()">
+      Cerrar Sesión
+    </ion-button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">
+        <h1 class="textCenter">
+          Cuerpos Académicos
+        </h1>
+      </ion-col>
+      <ion-col size="4">
+        <ion-searchbar (ionChange)="filterData($event.target.value)">
+        </ion-searchbar>
+      </ion-col>
+      <ion-col size="4" *ngIf="type===1 || type===2">
+        <ion-button expand="full" (click)="openModal()">
+          <ion-icon name="add"></ion-icon>
+          Agregar Cuerpo Académico
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row *ngFor="let item of dataFilter">
+      <ion-col size="3">
+        <h3 class="textCenter">
+          {{item.clave}}
+        </h3>
+      </ion-col>
+      <ion-col size="3">
+        <h3 class="textCenter">
+          {{item.nombre}}
+        </h3>
+      </ion-col>
+      <ion-col size="6">
+        <ion-row>
+          <ion-col>
+            <ion-button (click)=" verCA(item)" expand="full">
+              Ver
+            </ion-button>
+          </ion-col>
+          <ion-col *ngIf="type===1 || type===2">
+            <ion-button (click)="openModalData(item)" expand="full">
+              Actualizar
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button (click)="descargar(item)" expand="full">
+              Descargar
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

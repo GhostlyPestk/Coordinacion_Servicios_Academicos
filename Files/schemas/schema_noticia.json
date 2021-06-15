@@ -1,0 +1,7 @@
+{
+    "autor": "id_usuario",
+    "imagen": "Noticia 1",
+    "url": "Noticia de verdad",
+    "fecha": "2020-12-12",
+    "estado": "visible" // vidible | no visible
+}

@@ -1,0 +1,80 @@
+<ion-content>
+  <ion-infinite-scroll>
+    <ion-card>
+      <ion-card-header>
+        <ion-row>
+          <ion-col class="textCenter" size="12">
+            <h1>Agregar PRODEP</h1>
+          </ion-col>
+        </ion-row>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item size="6">
+                <ion-input
+                  type="text"
+                  [(ngModel)]="codigo"
+                  placeholder="Codigo"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-input
+                  type="text"
+                  [(ngModel)]="duracion"
+                  placeholder="Duracion"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-input
+                  type="text"
+                  [(ngModel)]="fecha"
+                  placeholder="Fecha"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-input
+                  type="text"
+                  [(ngModel)]="monto"
+                  placeholder="Monto Economico"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="cre === 1">
+            <ion-col>
+              <ion-button (click)="crearProdep()" expand="full"
+                >Crear</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="cre === 2">
+            <ion-col>
+              <ion-button (click)="actualizarProdep()" expand="full"
+                >Actualizar</ion-button
+              >
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button (click)="arbol()" expand="full"
+                >Monto Sugerido</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </ion-infinite-scroll>
+</ion-content>

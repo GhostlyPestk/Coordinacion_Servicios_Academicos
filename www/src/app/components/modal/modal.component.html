@@ -1,0 +1,82 @@
+<ion-content>
+  <ion-infinite-scroll>
+    <ion-card>
+      <ion-card-header>
+        <ion-row>
+          <ion-col class="textCenter" size="12">
+            <h1>Agregar Cuerpo Academico</h1>
+          </ion-col>
+        </ion-row>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item size="6">
+                <ion-input
+                  type="text"
+                  [(ngModel)]="this.nombre"
+                  placeholder="Nombre"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-input
+                  type="text"
+                  [(ngModel)]="clave"
+                  placeholder="Clave"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-input
+                  type="text"
+                  [(ngModel)]="anio"
+                  placeholder="Año"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>Nivel</ion-label>
+                <ion-select [(ngModel)]="nivel">
+                  <ion-select-option value="En formacion"
+                    >En formación
+                  </ion-select-option>
+                  <ion-select-option value="En consolidacion"
+                    >En consolidacion
+                  </ion-select-option>
+                  <ion-select-option value="Consolidado"
+                    >Consolidado
+                  </ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="cre === 1">
+            <ion-col>
+              <ion-button (click)="crearCuerpoAcademico()" expand="full"
+                >Crear</ion-button
+              >
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="cre !== 1">
+            <ion-col>
+              <ion-button (click)="actualizarCuerpoAcademico()" expand="full"
+                >Actualizar</ion-button
+              >
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </ion-infinite-scroll>
+</ion-content>
