@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { ToastController } from "@ionic/angular";
+import { ToastController, AlertController, Platform } from "@ionic/angular";
 import { Router } from "@angular/router";
 import { AuthService } from "src/app/services/auth.service";
 
@@ -16,7 +16,9 @@ export class LoginPage implements OnInit {
     private auth: AuthService,
     private formBuilder: FormBuilder,
     public toastController: ToastController,
-    private router: Router
+    private router: Router,
+    private alertCtrl: AlertController,
+    private platform: Platform 
   ) {
     this.fgLogin = this.formBuilder.group({
       code: [
@@ -29,6 +31,16 @@ export class LoginPage implements OnInit {
       ],
       password: ["", Validators.required],
     });
+  }
+
+  async showPlatform(){
+    let text = 'Corriendo en: ' + this.platform.platforms();
+    let alert = await this.alertCtrl.create({
+      header: 'Entorno',
+      subHeader: text,
+      buttons: ['OK']
+    });
+    await alert.present();
   }
 
   ngOnInit() {}

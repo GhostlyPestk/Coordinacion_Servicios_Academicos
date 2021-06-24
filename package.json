@@ -9,19 +9,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iammayro/Sistema-Coordinacion-Servicios-Academicos.git"
+    "url": "https://github.com/GhostlyPestk/Coordinacion_Servicios_Academicos/tree/online"
   },
   "keywords": [
     "SIIPERSU",
     "PRODEP",
     "PROFACAT"
   ],
-  "author": "Fernando Mayorga, Carlos Carvajal",
+  "author": "Sixto Jatzmay LLamas Garcia",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/iammayro/Sistema-Coordinacion-Servicios-Academicos/issues"
+    "url": "https://github.com/GhostlyPestk/Coordinacion_Servicios_Academicos/tree/online/issues"
   },
-  "homepage": "https://github.com/iammayro/Sistema-Coordinacion-Servicios-Academicos#readme",
+  "homepage": "https://github.com/GhostlyPestk/Coordinacion_Servicios_Academicos/tree/online#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
